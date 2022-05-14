@@ -1,0 +1,10 @@
+apache-airflow
+requests
+boto3
+botocore
+backoff
+python-dotenv
+ratelimit
+
+
+
