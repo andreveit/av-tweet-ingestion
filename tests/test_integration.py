@@ -58,7 +58,7 @@ def test_received_data(tmpdir):
 
     
     
-    path = glob(f'{mkdir_path.strpath}\\*')
+    path = glob(f'{mkdir_path.strpath}/*')
     with open(path[0], 'r') as file:
         file = file.read()
 
