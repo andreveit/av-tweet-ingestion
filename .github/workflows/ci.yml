@@ -28,7 +28,9 @@ jobs:
     - name: Install dependencies
       run: |
         make install
+    - name: echo var1
       run: echo $TEST_ENV_VAR
+    - name: echo var2
       run: echo $TEST_ENV_VAR_SECRETS
     - name: Run tests
       run: |
