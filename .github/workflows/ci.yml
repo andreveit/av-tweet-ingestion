@@ -11,6 +11,9 @@ env:
   S3_SECRET_KEY: ${{ secrets.S3_SECRET_KEY }}
   S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
   S3_LANDING_LAYER: ${{ secrets.S3_LANDING_LAYER }}
+  TEST_ENV_VAR: my-env-var-test
+  TEST_ENV_VAR_SECRETS: ${{ secrets.TEST_ENV_VAR_SECRETS }}
+
 jobs:
   build:
 
@@ -25,6 +28,8 @@ jobs:
     - name: Install dependencies
       run: |
         make install
+      run: echo $TEST_ENV_VAR
+      run: echo $TEST_ENV_VAR_SECRETS
     - name: Run tests
       run: |
         make test
