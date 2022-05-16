@@ -13,7 +13,7 @@ env:
   S3_LANDING_LAYER: ${{ secrets.S3_LANDING_LAYER }}
 
 jobs:
-  build:
+  test-deploy:
 
     runs-on: ubuntu-latest
     environment: env
@@ -29,3 +29,13 @@ jobs:
     - name: Run tests
       run: |
         make test
+    - name: Install build dependencies
+      run: |
+        pip install build
+    - name: Build package
+      run: python -m build
+    - name: Publish package
+      uses: pypa/gh-action-pypi-publish@27b31702a0e7fc50959f5ad993c78deac1bdfc29
+      with:
+        user: ${{ secrets.PYPI_API_USER }}
+        password: ${{ secrets.PYPI_API_TOKEN }}

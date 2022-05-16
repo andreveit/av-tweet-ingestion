@@ -10,7 +10,7 @@ README = (HERE / "README.md").read_text()
 # This call to setup() does all the work
 setup(
     name="av-tweet-ingestion",
-    version="1.0.1",
+    version="1.0.2",
     description="Ingests tweets using Twitter's RecentAPI.",
     long_description=README,
     long_description_content_type="text/markdown",
@@ -32,10 +32,5 @@ setup(
                 ,'backoff'
                 ,'boto3'
                 ,'python-dotenv'
-                ,'ratelimit'],
-    entry_points={
-        "console_scripts": [
-            "realpython=reader.__main__:main",
-        ]
-    },
+                ,'ratelimit']
 )
