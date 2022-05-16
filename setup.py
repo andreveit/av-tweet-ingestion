@@ -10,7 +10,7 @@ README = (HERE / "README.md").read_text()
 # This call to setup() does all the work
 setup(
     name="av-tweet-ingestion",
-    version="1.0.3",
+    version="1.0.4",
     description="Ingests tweets using Twitter's RecentAPI.",
     long_description=README,
     long_description_content_type="text/markdown",
@@ -26,11 +26,10 @@ setup(
     packages=['ingestion'
                 ],
     include_package_data=True,
-    install_requires=["feedparser", "html2text",
-                'requests'
-                ,'botocore'
-                ,'backoff'
-                ,'boto3'
-                ,'python-dotenv'
-                ,'ratelimit']
+    install_requires=['requests'
+                        ,'botocore'
+                        ,'backoff'
+                        ,'boto3'
+                        ,'python-dotenv'
+                        ,'ratelimit']
 )

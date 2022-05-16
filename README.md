@@ -20,13 +20,12 @@ pip install av-tweet-ingestion
 
   
 
-## Usage example
+## Usage example - Twitter Recent API
 
   
 <br>
 
 ### Setup Environmental Variables
-
   
 
 BEARER_TOKEN="<twitter_bearer_token>"
@@ -49,6 +48,9 @@ S3_LANDING_LAYER="<landing_zone>"
 
 ### Define Query
 
+Build query to request tweets.
+
+https://developer.twitter.com/en/docs/twitter-api/tweets/search/integrate/build-a-query
 ```
 
 query_params = {
@@ -74,6 +76,15 @@ query_params = {
   
 
 ### Ingest
+
+Imports
+
+```
+from ingestion.apis import RecentAPI
+from ingestion.ingestors import BatchIngestor
+from ingestion.writers import S3Writer
+```
+
 
 ```
 
