@@ -1,8 +1,8 @@
 import logging
-import os
 
 from dotenv import load_dotenv
-from logconfig import c_handler, f_handler
+from logconfig import c_handler
+from logconfig import f_handler
 
 from apis import RecentAPI
 from ingestors import BatchIngestor
@@ -14,7 +14,7 @@ if __name__ == "__main__": # pragma: no cover
     logger = logging.getLogger(__name__)
     logger.setLevel('DEBUG')
     logger.addHandler(c_handler)
-    logger.addHandler(f_handler)
+    # logger.addHandler(f_handler)
 
 
 

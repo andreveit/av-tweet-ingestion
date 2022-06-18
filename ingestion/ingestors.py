@@ -1,14 +1,14 @@
 import os
 import logging
 from dotenv import load_dotenv
-from ingestion.logconfig import c_handler, f_handler
-
+from ingestion.logconfig import c_handler
+# from ingestion.logconfig import f_handler
 
 # Setup Logger
 logger = logging.getLogger(__name__)
 logger.setLevel('DEBUG')
 logger.addHandler(c_handler)
-logger.addHandler(f_handler)
+# logger.addHandler(f_handler)
 
 class BatchIngestor:
     '''

@@ -5,8 +5,8 @@ import requests
 from backoff import expo, on_exception
 from ratelimit import RateLimitException, limits
 from ingestion.exceptions import QueryErrorException, AccessUnauthorizedException
-from ingestion.logconfig import c_handler, f_handler
-
+from ingestion.logconfig import c_handler
+# from ingestion.logconfig import f_handler
 
 
 # Constants
@@ -17,7 +17,7 @@ FIFTEEN_MINUTES = 900
 logger = logging.getLogger(__name__)
 logger.setLevel('DEBUG')
 logger.addHandler(c_handler)
-logger.addHandler(f_handler)
+# logger.addHandler(f_handler)
 
 
 
