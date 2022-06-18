@@ -10,16 +10,6 @@ from glob import glob
 
 import json
 
-import logging
-from ingestion.logconfig import c_handler, f_handler
-
-# Setup Logger
-logger = logging.getLogger(__name__)
-logger.setLevel('DEBUG')
-logger.addHandler(c_handler)
-logger.addHandler(f_handler)
-
-
 def test_query_error():
 
     with pytest.raises(Exception):
